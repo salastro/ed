@@ -1,4 +1,4 @@
-module github.com/sergeyklay/gohugo-theme-ed
+module github.com/salastro/ed
 
 go 1.18
 
