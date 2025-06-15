@@ -320,7 +320,7 @@ refLinksErrorLevel = 'WARNING'
   [[module.imports]]
     # Use full path to theme's repository. This is replaced in go.mod for
     # exampleSite to point to the directory above.
-    path = 'github.com/sergeyklay/gohugo-theme-ed'
+    path = 'github.com/salastro/ed'
 
 [minify]
   # Do not minify XML files to avoid CDATA escape issues
