@@ -12,7 +12,6 @@
     {{ $maxPosts := site.Params.recentPostsSize | default 5 }}
 
     <div class="toc" role="navigation">
-        <h2>{{ i18n "latest_publications" }}</h2>
         <ul class="texts">
             {{/* Range through the first $maxPosts items of the $section */}}
             {{ range (first $maxPosts $section) }}
