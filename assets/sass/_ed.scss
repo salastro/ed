@@ -92,15 +92,31 @@ body {
 }
 
 /* Links */
-a, .text-title a {
-  color: $link-color;
+a {
+  position: relative;
   text-decoration: none;
-}
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 85%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px; // height of underline
+  transition: background-size 0.3s ease;
 
-/* `:focus` is linked to `:hover` for basic accessibility */
-a:hover,
-a:focus {
-  text-decoration: underline;
+  &:hover,
+  &:focus {
+    background-size: 100% 2px;
+  }
+
+  .masthead-title & {
+    background-size: 0% 3px; // height of underline
+    &:hover,
+    &:focus {
+      background-size: 100% 3px;
+    }
+  }
+
+  .sidebar-nav & {
+    background-position: 0 100%;
+  }
 }
 
 /* Headings */
