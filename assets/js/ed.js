@@ -16,6 +16,7 @@ function setupBackToTop() {
 // Annotation support
 function setupHypothes() {
   const hypothesisContainer = document.querySelector('.hypothesis-container');
+  const sidebarCheckbox = document.querySelector('#sidebar-checkbox');
   if (hypothesisContainer !== null) {
     hypothesisContainer.addEventListener('click', e => {
       e.preventDefault();
@@ -24,6 +25,11 @@ function setupHypothes() {
       script.setAttribute('src', 'https://cdn.hypothes.is/hypothesis');
       script.type = 'text/javascript';
       document.getElementsByTagName('head')[0].appendChild(script);
+
+      // Close the sidebar by unchecking the checkbox
+      if (sidebarCheckbox && sidebarCheckbox.checked) {
+        sidebarCheckbox.checked = false;
+      }
     });
   }
 
