@@ -39,7 +39,33 @@ function setupHypothes() {
   }
 }
 
+// Dark mode toggle logic (inversion-based)
+function setupDarkMode() {
+  const checkbox = document.getElementById('darkmode-checkbox');
+  const root = document.body;
+
+  if (!checkbox) return;
+
+  // Restore theme on page load
+  if (localStorage.getItem('darkmode') === 'true') {
+    checkbox.checked = true;
+    root.classList.add('darkmode');
+  }
+
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      root.classList.add('darkmode');
+      localStorage.setItem('darkmode', 'true');
+    } else {
+      root.classList.remove('darkmode');
+      localStorage.setItem('darkmode', 'false');
+    }
+  });
+}
+
+// Init all
 document.addEventListener('DOMContentLoaded', () => {
   setupBackToTop();
   setupHypothes();
+  setupDarkMode(); // <- add this
 });

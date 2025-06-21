@@ -1,0 +1,24 @@
+body.darkmode  {
+  background-color: #181a1b !important;
+}
+
+.darkmode .wrap {
+  filter: invert(1) hue-rotate(180deg);
+
+  & .sidebar {
+    filter: invert(1) hue-rotate(180deg);
+  }
+
+  & a {
+    -webkit-text-stroke-color: #E7E5E4;
+  }
+
+  & hr, & .masthead {
+    border-top-color: #cccccc;
+    border-bottom-color: #cccccc;
+  }
+}
+
+.darkmode .sidebar-toggle {
+  background-color: #181a1b;
+}
