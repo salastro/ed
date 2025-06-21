@@ -41,26 +41,29 @@ function setupHypothes() {
 
 // Dark mode toggle logic (inversion-based)
 function setupDarkMode() {
-  const checkbox = document.getElementById('darkmode-checkbox');
-  const root = document.body;
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem('darkmode'); // 'true', 'false', or null
 
-  if (!checkbox) return;
+  const shouldEnableDark = saved === 'true' || (saved === null && prefersDark);
 
-  // Restore theme on page load
-  if (localStorage.getItem('darkmode') === 'true') {
-    checkbox.checked = true;
-    root.classList.add('darkmode');
+  if (shouldEnableDark) {
+    document.body.classList.add('darkmode');
   }
 
-  checkbox.addEventListener('change', () => {
-    if (checkbox.checked) {
-      root.classList.add('darkmode');
-      localStorage.setItem('darkmode', 'true');
-    } else {
-      root.classList.remove('darkmode');
-      localStorage.setItem('darkmode', 'false');
-    }
-  });
+  const checkbox = document.getElementById('darkmode-checkbox');
+  if (checkbox) {
+    checkbox.checked = shouldEnableDark;
+
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        document.body.classList.add('darkmode');
+        localStorage.setItem('darkmode', 'true');
+      } else {
+        document.body.classList.remove('darkmode');
+        localStorage.setItem('darkmode', 'false');
+      }
+    });
+  }
 }
 
 // Init all
