@@ -419,20 +419,19 @@ a.sidebar-nav-item:focus {
   -webkit-text-stroke: 0px;
 
   position: fixed;
-  top: 1rem;
+  top: .7125rem;
   right: 1rem;
   z-index: 100;
-  width: 2.75rem;
-  height: 2.75rem;
-  background-color: rgba(255, 255, 255, 0.85);
+  width: 2rem;
+  height: 2rem;
+  background-color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   color: #333;
-  font-size: 1.3rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
 
   &:hover {
