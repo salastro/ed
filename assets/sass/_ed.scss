@@ -512,6 +512,7 @@ a.sidebar-nav-item:focus {
 
 #sidebar-checkbox:checked ~ .sidebar,
 #sidebar-checkbox:checked ~ .wrap,
+#sidebar-checkbox:checked ~ .darkmode-toggle,
 #sidebar-checkbox:checked ~ .sidebar-toggle {
   @include transform(translateX(14rem));
 }
