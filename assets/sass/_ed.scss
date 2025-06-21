@@ -122,6 +122,10 @@ a {
   .sidebar-nav & {
     background-position: 0 100%;
   }
+
+  .sidebar & {
+    -webkit-text-stroke: 0px; /* Remove the default text stroke */
+  }
 }
 
 /* Headings */
